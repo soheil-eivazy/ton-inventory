@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d26ok3mhplda3"]
+
+[ext_resource type="Script" uid="uid://6flaslg1fr7g" path="res://src/protag/protag.gd" id="1_0qqcn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_br06f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_br06f"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_br06f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bikiy"]
+radius = 1.0498047
+height = 2.0996094
+
+[node name="Protag" type="CharacterBody3D" unique_id=844117783]
+script = ExtResource("1_0qqcn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1842319040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9912978, 0)
+shape = SubResource("CapsuleShape3D_br06f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=629069031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01689, 0)
+mesh = SubResource("CapsuleMesh_br06f")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1410138497]
+transform = Transform3D(1, 0, 0, 0, -0.030576156, -0.99953246, 0, 0.99953246, -0.030576156, 0, 1.7356228, 0)
+mesh = SubResource("PrismMesh_br06f")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=769072987]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6840107, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=933271156]
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1262557581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0596361, 0)
+shape = SubResource("CapsuleShape3D_bikiy")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

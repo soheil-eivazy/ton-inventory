@@ -1,3 +1,117 @@
 [gd_scene format=3 uid="uid://c7h17ifsnnpcp"]
 
+[ext_resource type="PackedScene" uid="uid://d26ok3mhplda3" path="res://src/protag/protag.tscn" id="1_fm6s0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm6s0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bikiy"]
+albedo_color = Color(0.09019608, 1, 0.101960786, 1)
+
+[sub_resource type="Environment" id="Environment_bikiy"]
+
 [node name="MainRoom" type="Node3D" unique_id=1298754063]
+
+[node name="Protag" parent="." unique_id=844117783 instance=ExtResource("1_fm6s0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4012637)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1995950455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19677734, 0, -1.644043)
+use_collision = true
+size = Vector3(15, 1, 20)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=895790852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.819092, 2.813211, -1.644043)
+use_collision = true
+size = Vector3(0.9682617, 6.7092285, 20)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=166462567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2262974, 2.813211, -1.644043)
+use_collision = true
+size = Vector3(0.9682617, 6.7092285, 20)
+material = SubResource("StandardMaterial3D_fm6s0")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=806640110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27761555, 2.813211, -10.881897)
+use_collision = true
+size = Vector3(15.1067505, 6.7092285, 1.524292)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1837586452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27761555, 2.813211, 9.051688)
+use_collision = true
+size = Vector3(15.1067505, 6.7092285, 1.524292)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=591933498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6772947, 2.813211, -0.93666935)
+use_collision = true
+size = Vector3(5.19693, 6.7092285, 1.524292)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=103105777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2980976, 2.813211, -0.93666935)
+use_collision = true
+size = Vector3(5.19693, 6.7092285, 1.524292)
+
+[node name="Light" type="CSGSphere3D" parent="." unique_id=2131108826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5105095, 3.9406042, 8.128091)
+radius = 0.1
+material = SubResource("StandardMaterial3D_bikiy")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="Light" unique_id=1709168400]
+transform = Transform3D(0.73980296, 0.15111543, -0.65563387, 0, 0.9744513, 0.22459888, 0.6728236, -0.16615891, 0.72090197, 0, 0, -1.2317486)
+light_color = Color(0.11372549, 1, 0.3137255, 1)
+light_energy = 5.277
+
+[node name="Light2" type="CSGSphere3D" parent="." unique_id=863985078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5652122, 3.9406042, 7.7965946)
+radius = 0.1
+material = SubResource("StandardMaterial3D_bikiy")
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Light2" unique_id=650578524]
+transform = Transform3D(0.73980296, 0.15111543, -0.65563387, 0, 0.9744513, 0.22459888, 0.6728236, -0.16615891, 0.72090197, 0, 0, -1.2317486)
+light_color = Color(0.11372549, 1, 0.3137255, 1)
+
+[node name="Light3" type="CSGSphere3D" parent="." unique_id=515175720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5652122, 3.9406042, 0.6434827)
+radius = 0.1
+material = SubResource("StandardMaterial3D_bikiy")
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Light3" unique_id=724760055]
+transform = Transform3D(0.73980296, 0.15111543, -0.65563387, 0, 0.9744513, 0.22459888, 0.6728236, -0.16615891, 0.72090197, 0, 0, -1.2317486)
+light_color = Color(0.11372549, 1, 0.3137255, 1)
+
+[node name="Light4" type="CSGSphere3D" parent="." unique_id=64387536]
+transform = Transform3D(0.067030035, 0, -0.99775094, 0, 1, 0, 0.99775094, 0, 0.067030035, -6.169668, 3.9406042, 0.6434827)
+radius = 0.1
+material = SubResource("StandardMaterial3D_bikiy")
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Light4" unique_id=33482956]
+transform = Transform3D(0.73980296, 0.15111543, -0.65563387, 0, 0.9744513, 0.22459888, 0.6728236, -0.16615891, 0.72090197, 0, 0, -1.2317486)
+light_color = Color(0.11372549, 1, 0.3137255, 1)
+
+[node name="Light5" type="CSGSphere3D" parent="." unique_id=398377078]
+transform = Transform3D(-0.0051673856, 0, -0.99998665, 0, 1, 0, 0.99998665, 0, -0.0051673856, -6.169668, 3.9406042, -9.366367)
+radius = 0.1
+material = SubResource("StandardMaterial3D_bikiy")
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Light5" unique_id=1452731609]
+transform = Transform3D(0.73980296, 0.15111543, -0.65563387, 0, 0.9744513, 0.22459888, 0.6728236, -0.16615891, 0.72090197, 0, 0, -1.2317486)
+light_color = Color(0.11372549, 1, 0.3137255, 1)
+
+[node name="Light6" type="CSGSphere3D" parent="." unique_id=30885061]
+transform = Transform3D(-0.99919665, 0, -0.040075384, 0, 1, 0, 0.040075384, 0, -0.99919665, 5.4243555, 3.9406042, -9.366367)
+radius = 0.1
+material = SubResource("StandardMaterial3D_bikiy")
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Light6" unique_id=1691084619]
+transform = Transform3D(0.73980296, 0.15111543, -0.65563387, 0, 0.9744513, 0.22459888, 0.6728236, -0.16615891, 0.72090197, 0, 0, -1.2317486)
+light_color = Color(0.11372549, 1, 0.3137255, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=381543415]
+environment = SubResource("Environment_bikiy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1279458270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.256402, 5.235582)
+light_color = Color(0.83205175, 0.8314001, 0, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1075723041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1018171, -5.5147424)
+light_color = Color(0.9607843, 0, 0.25490198, 1)
