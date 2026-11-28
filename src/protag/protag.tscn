@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d26ok3mhplda3"]
 
 [ext_resource type="Script" uid="uid://6flaslg1fr7g" path="res://src/protag/protag.gd" id="1_0qqcn"]
+[ext_resource type="Script" uid="uid://dxpoupays0337" path="res://src/helpers/interactor.gd" id="2_8lsrc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_br06f"]
 
@@ -8,9 +9,8 @@
 
 [sub_resource type="PrismMesh" id="PrismMesh_br06f"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bikiy"]
-radius = 1.0498047
-height = 2.0996094
+[sub_resource type="BoxShape3D" id="BoxShape3D_8lsrc"]
+size = Vector3(1, 0.8807373, 1.128418)
 
 [node name="Protag" type="CharacterBody3D" unique_id=844117783]
 script = ExtResource("1_0qqcn")
@@ -31,14 +31,15 @@ mesh = SubResource("PrismMesh_br06f")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6840107, 0)
 
-[node name="Area3D" type="Area3D" parent="Camera3D" unique_id=933271156]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6840107, -0.626487)
+[node name="Interactor" type="Area3D" parent="Camera3D" unique_id=36330874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6840107, 0)
 collision_mask = 4
+script = ExtResource("2_8lsrc")
+metadata/_custom_type_script = "uid://dxpoupays0337"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Area3D" unique_id=1262557581]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0596361, 0)
-shape = SubResource("CapsuleShape3D_bikiy")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Camera3D/Interactor" unique_id=1262557581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6823084, -0.690696)
+shape = SubResource("BoxShape3D_8lsrc")
 
-[connection signal="area_entered" from="Camera3D/Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Camera3D/Area3D" to="." method="_on_area_3d_area_exited"]
-[connection signal="body_entered" from="Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="area_entered" from="Camera3D/Interactor" to="." method="_on_interactor_area_entered"]
+[connection signal="area_exited" from="Camera3D/Interactor" to="." method="_on_interactor_area_exited"]

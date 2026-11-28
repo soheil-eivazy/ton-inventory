@@ -50,9 +50,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_area_3d_area_entered(area: Area3D) -> void:
+
+func _on_interactor_area_entered(area: Area3D) -> void:
 	interactee = area
 
 
-func _on_area_3d_area_exited(area: Area3D) -> void:
-	interactee = null
+func _on_interactor_area_exited(area: Area3D) -> void:
+	if interactee == area:
+		interactee = null
