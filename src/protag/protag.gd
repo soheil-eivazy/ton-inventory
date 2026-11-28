@@ -5,6 +5,8 @@ const JUMP_VELOCITY = 4.5
 const CAMERA_SPEED = 0.5
 var health: int = 5
 
+var interactee: Node3D = null
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -39,5 +41,18 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+	if interactee != null:
+		if Input.is_action_just_pressed("ACTION"):
+			if interactee.has_method("action"):
+				interactee.action()
 
 	move_and_slide()
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	interactee = area
+
+
+func _on_area_3d_area_exited(area: Area3D) -> void:
+	interactee = null

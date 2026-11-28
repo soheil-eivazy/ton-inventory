@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7h17ifsnnpcp"]
 
 [ext_resource type="PackedScene" uid="uid://d26ok3mhplda3" path="res://src/protag/protag.tscn" id="1_fm6s0"]
+[ext_resource type="PackedScene" uid="uid://boeg4pjdq3riy" path="res://src/main/lamp.tscn" id="2_cctw7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm6s0"]
 
@@ -114,4 +115,7 @@ light_color = Color(0.83205175, 0.8314001, 0, 1)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1075723041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1018171, -5.5147424)
-light_color = Color(0.9607843, 0, 0.25490198, 1)
+light_color = Color(0.26458585, 0.4846207, 0.9691761, 1)
+
+[node name="Lamp" parent="." unique_id=727924472 instance=ExtResource("2_cctw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6321464, -8.066357)

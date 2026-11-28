@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://boeg4pjdq3riy"]
+
+[ext_resource type="Script" uid="uid://cy1lfwdff1jj8" path="res://src/main/lamp.gd" id="1_bekw5"]
+[ext_resource type="Script" uid="uid://cyh3x5bp3tqkj" path="res://area_3d.gd" id="2_uno5e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bikiy"]
+radius = 1.1204501
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bikiy"]
+albedo_color = Color(1, 0.2509804, 0, 1)
+
+[node name="Lamp" type="Node3D" unique_id=727924472]
+script = ExtResource("1_bekw5")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=704613882]
+collision_layer = 4
+script = ExtResource("2_uno5e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1802537976]
+shape = SubResource("SphereShape3D_bikiy")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1809970127]
+material = SubResource("StandardMaterial3D_bikiy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2114470931]
+light_color = Color(1, 0.06666667, 0.09019608, 1)
